@@ -1,7 +1,6 @@
 import { BrowserRouter, Navigate, NavLink, Route, Routes } from 'react-router-dom';
 
-import { FormikBasicPage } from '../03forms/pages/FormikBasicPage';
-import { RegisterPage } from '../03forms/pages/RegisterPage';
+import { FormikBasicPage, FormikComponents, FormikYupPage, FormikAbstraction, RegisterPage } from '../03forms/pages'
 
 import logo from '../logo.svg';
 
@@ -42,12 +41,45 @@ export const Navigation = () => {
 								Formik Basic
 							</NavLink>
 						</li>
+						<li>
+							<NavLink
+								to='/formik-yup'
+								className={({ isActive }) =>
+									isActive ? 'nav-active' : ''
+								}
+							>
+								Formik Yup
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								to='/formik-components'
+								className={({ isActive }) =>
+									isActive ? 'nav-active' : ''
+								}
+							>
+								Formik Components
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								to='/formik-abstraction'
+								className={({ isActive }) =>
+									isActive ? 'nav-active' : ''
+								}
+							>
+								Formik Abstraction
+							</NavLink>
+						</li>
 					</ul>
 				</nav>
 				<Routes>
 					<Route path='/' element={<h1>Home</h1>} />
 					<Route path='register' element={<RegisterPage/>} />
 					<Route path='formik-basic' element={<FormikBasicPage/>} />
+					<Route path='formik-yup' element={<FormikYupPage/>} />
+					<Route path='formik-components' element={<FormikComponents/>} />
+					<Route path='formik-abstraction' element={<FormikAbstraction/>} />
 
 					<Route path='/*' element={<Navigate to='/' replace />} />
 				</Routes>
